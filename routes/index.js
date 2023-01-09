@@ -3,7 +3,7 @@ const _ = require('lodash');
 const router = express.Router()
 const {db} = require('../utils/db')
 
-
+const { toInt } = require('../utils/number')
 
 router.post('/', async (req, res, next) => {
   try {
@@ -12,8 +12,8 @@ router.post('/', async (req, res, next) => {
     let hour = timestamp.getHours()
     let record = await db.Record?.create({
       data: {
-        distance,
-        hour
+        distance: toInt(distance),
+        hour: toInt(hour)
       }
     })
     res.json(record);
@@ -47,7 +47,7 @@ router.post('/config', async (req, res, next) => {
         id: 1
       },
       data: {
-        inhibitTime 
+        inhibitTime: toInt(inhibitTime)
       }
     })
     res.json(record);

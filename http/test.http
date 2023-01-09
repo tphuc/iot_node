@@ -1,0 +1,1 @@
+POST https://iot-node.vercel.app/api/v1?distance=10

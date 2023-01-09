@@ -15,8 +15,8 @@ model Record {
   id        Int       @id @default(autoincrement())
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
-  distance  String?     
-  hour      String?
+  distance  Int?     
+  hour      Int?
 }
 
 model Config {
