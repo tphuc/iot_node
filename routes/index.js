@@ -1,6 +1,7 @@
 const express = require('express')
 const _ = require('lodash');
 const router = express.Router()
+const axios = require('axios')
 const {db} = require('../utils/db')
 
 const { toInt } = require('../utils/number')
@@ -17,9 +18,7 @@ router.post('/', async (req, res, next) => {
       }
     })
 
-    let res = await fetch('https://maker.ifttt.com/trigger/motion_detected/json/with/key/crw0eC98k0LK3RE9ODiNuW', {
-      method:"POST"
-    })
+    await axios.get('https://maker.ifttt.com/trigger/motion_detected/json/with/key/crw0eC98k0LK3RE9ODiNuW')
 
     res.json(record);
    

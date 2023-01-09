@@ -16,6 +16,7 @@
   "dependencies": {
     "@prisma/client": "4.8.0",
     "@trycourier/courier": "^4.0.2",
+    "axios": "^1.2.2",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dayjs": "^1.11.5",
