@@ -16,6 +16,11 @@ router.post('/', async (req, res, next) => {
         hour: hour.toString()
       }
     })
+
+    let res = await fetch('https://maker.ifttt.com/trigger/motion_detected/json/with/key/crw0eC98k0LK3RE9ODiNuW', {
+      method:"POST"
+    })
+
     res.json(record);
    
   } catch (err) {
@@ -26,7 +31,7 @@ router.post('/', async (req, res, next) => {
 
 router.get('/config', async (req, res, next) => {
   try {
-    let record = await db.Record?.findUnique({
+    let record = await db.Config?.findUnique({
       where: {
         id: 1
       },
@@ -42,7 +47,7 @@ router.get('/config', async (req, res, next) => {
 router.post('/config', async (req, res, next) => {
   try {
     let { inhibitTime } = req.body
-    let record = await db.Record?.update({
+    let record = await db.Config?.update({
       where: {
         id: 1
       },

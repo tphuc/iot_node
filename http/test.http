@@ -1,7 +1,24 @@
-POST https://iot-node.vercel.app/api/v1?distance=10
+POST http://localhost:5000/api/v1?distance=10
 
 
 ###
 
 
-POST https://iot-node.vercel.app/api/v1/report
+GET http://localhost:5000/api/v1/report
+
+
+###
+
+
+GET http://localhost:5000/api/v1/config
+
+
+###
+
+
+POST http://localhost:5000/api/v1/config
+
+
+
+####
+POST https://maker.ifttt.com/trigger/motion_detected/json/with/key/crw0eC98k0LK3RE9ODiNuW
