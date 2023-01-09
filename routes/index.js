@@ -13,7 +13,7 @@ router.post('/', async (req, res, next) => {
     let record = await db.Record?.create({
       data: {
         distance: toInt(distance),
-        hour: toInt(hour)
+        hour: hour.toString()
       }
     })
     res.json(record);

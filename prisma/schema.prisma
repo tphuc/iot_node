@@ -16,7 +16,7 @@ model Record {
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
   distance  Int?     
-  hour      Int?
+  hour      String?
 }
 
 model Config {
