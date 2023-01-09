@@ -1,0 +1,9 @@
+POST http://localhost:5000/api/v1/country
+
+
+
+###
+
+
+DELETE  http://localhost:5000/api/v1/country/16
+
