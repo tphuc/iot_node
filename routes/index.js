@@ -57,9 +57,8 @@ router.post('/config', async (req, res, next) => {
   }
 });
 
-router.post('/report', async (req, res, next) => {
+router.get('/report', async (req, res, next) => {
   try {
-    let { inhibitTime } = req.body
 
     let currentTime = new Date()
     const oneDayAgo = new Date(currentTime.getTime() - 24 * 60 * 60 * 1000)
@@ -73,9 +72,6 @@ router.post('/report', async (req, res, next) => {
           gte: oneDayAgo
         }
       },
-      data: {
-        inhibitTime 
-      }
     })
     res.json(records);
    
