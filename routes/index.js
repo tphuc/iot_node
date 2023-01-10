@@ -34,9 +34,7 @@ router.get('/history', async (req, res, next) => {
     let records = await db.Record?.findMany({
       take: 20,
       orderBy: {
-        createdAt: {
-          sort: 'desc',
-        }
+        createdAt: 'desc'
       }
     })
 
