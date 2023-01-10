@@ -6,7 +6,7 @@ const {db} = require('../utils/db')
 
 const { toInt } = require('../utils/number')
 
-router.post('/', async (req, res, next) => {
+router.get('/', async (req, res, next) => {
   try {
     let { distance } = req.query
     let timestamp = new Date()
