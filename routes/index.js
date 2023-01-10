@@ -28,6 +28,29 @@ router.get('/', async (req, res, next) => {
 });
 
 
+router.get('/history', async (req, res, next) => {
+  try {
+
+    let records = await db.Record?.findMany({
+      take: 20,
+      orderBy: {
+        createdAt: {
+          sort: 'desc',
+        }
+      }
+    })
+
+
+    res.json(records);
+   
+  } catch (err) {
+    next(err);
+  }
+});
+
+
+
+
 router.get('/config', async (req, res, next) => {
   try {
     let record = await db.Config?.findUnique({
