@@ -10,7 +10,7 @@ router.get('/', async (req, res, next) => {
   try {
     let { distance } = req.query
     let timestamp = new Date()
-    let hour = timestamp.getHours()
+    let hour = (timestamp.getUTCHours() + 7) % 24;
     let record = await db.Record?.create({
       data: {
         distance: toInt(distance),
